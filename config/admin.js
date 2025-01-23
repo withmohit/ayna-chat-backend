@@ -14,4 +14,6 @@ module.exports = ({ env }) => ({
     nps: env.bool('FLAG_NPS', true),
     promoteEE: env.bool('FLAG_PROMOTE_EE', true),
   },
+  url: '/dashboard', // This changes the admin panel URL
+  serveAdminPanel: false, // This prevents serving the admin panel at the root
 });
