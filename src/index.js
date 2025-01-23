@@ -32,6 +32,7 @@ module.exports = {
 
       try {
         const decoded = strapi.plugins['users-permissions'].services.jwt.verify(token);
+        socket.user = decoded; // Attach user information to the socket
         next();
       } catch (err) {
         next(new Error('Authentication error: Invalid token'));
