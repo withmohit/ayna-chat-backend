@@ -17,10 +17,12 @@ module.exports = {
    * run jobs, or perform some special logic.
    */
   async bootstrap({ strapi }) {
+    console.log("hitt");
     const { Server } = require('socket.io');
     const io = new Server(strapi.server.httpServer, {
       cors: {
-        origin: '*', // Allow all origins for simplicity
+        origin: '*',
+        methods: ['GET', 'POST'], // Allow all origins for simplicity
       },
     });
     io.use((socket, next) => {
